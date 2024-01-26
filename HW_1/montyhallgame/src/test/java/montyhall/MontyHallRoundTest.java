@@ -5,8 +5,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MontyHallRoundTest {
 
+    /**
+     * Тест проверяет, что метод switchDoor возвращает допустимую новую дверь после открытия двери ведущего.
+     */
     @Test
-    void test_switchDoor_validDoorReturned() {
+    void testSwitchDoorValidDoorReturned() {
         MontyHallRound round = new MontyHallRound(1);
         round.makeChoice(0);
         round.hostOpenDoor();
@@ -16,16 +19,22 @@ public class MontyHallRoundTest {
         assertTrue(newChosenDoor == 1 || newChosenDoor == 2);
     }
 
+    /**
+     * Тест проверяет, что метод isWinner возвращает true для правильной двери.
+     */
     @Test
-    void test_isWinner_returnsTrueForCorrectDoor() {
+    void testIsWinnerReturnsTrueForCorrectDoor() {
         MontyHallRound round = new MontyHallRound(2);
         round.makeChoice(1);
 
         assertTrue(round.isWinner(2));
     }
 
+    /**
+     * Тест проверяет, что метод makeChoice не выбрасывает исключение при передаче недопустимого значения двери.
+     */
     @Test
-    void test_makeChoice_withInvalidDoor() {
+    void testMakeChoiceWithInvalidDoor() {
         MontyHallRound round = new MontyHallRound(1);
         assertDoesNotThrow(() -> round.makeChoice(-1));
     }

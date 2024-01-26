@@ -6,8 +6,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MontyHallSimulationTest {
 
+    /**
+     * Тест проверяет, что результаты симуляции Monty Hall (игры с заданным числом раундов) верны.
+     */
     @Test
-    void runSimulation_checkResults() {
+    void testRunSimulationCheckResults() {
         int totalGames = 1000;
 
         MontyHallGame game = new MontyHallGame(totalGames);

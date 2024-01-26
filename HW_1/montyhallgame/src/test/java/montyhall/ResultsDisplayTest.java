@@ -5,8 +5,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ResultsDisplayTest {
 
+    /**
+     * Тест проверяет, что метод displayResults
+     * возвращает правильное отформатированное представление результатов.
+     */
     @Test
-    void displayResults_validDisplayOutput() {
+    void testDisplayResultsValidDisplayOutput() {
         ResultsDisplay resultsDisplay = new ResultsDisplay(5, 10);
 
         assertEquals("Игр с изменением выбора двери (стратегия смены): 5\n" +
@@ -14,8 +18,12 @@ public class ResultsDisplayTest {
                 resultsDisplay.displayResults());
     }
 
+    /**
+     * Тест проверяет, что конструктор ResultsDisplay
+     * выбрасывает исключение при передаче отрицательных значений.
+     */
     @Test
-    void constructor_withNegativeValues_throwsException() {
+    void testConstructorWithNegativeValuesThrowsException() {
         assertThrows(IllegalArgumentException.class, () -> new ResultsDisplay(-1, 5));
     }
 }
