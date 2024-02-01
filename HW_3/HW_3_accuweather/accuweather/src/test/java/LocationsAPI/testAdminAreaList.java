@@ -27,7 +27,10 @@ public class testAdminAreaList extends AccuweatherAbstractTest {
                 () -> assertNotNull(adminAreas[0].getLevel()),
                 () -> assertNotNull(adminAreas[0].getLocalizedType()),
                 () -> assertNotNull(adminAreas[0].getEnglishType()),
-                () -> assertNotNull(adminAreas[0].getCountryID()),
+                () -> assertNotNull(adminAreas[0].getCountryID())
+                );
+
+        assertAll(
                 () -> assertEquals("AD", adminAreas[0].getId()),
                 () -> assertEquals("Adygeya", adminAreas[0].getLocalizedName()),
                 () -> assertEquals("Adygeya", adminAreas[0].getEnglishName()),
