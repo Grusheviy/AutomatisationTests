@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public abstract class AbstractTest {
+public abstract class AbstractTestBaseUrl {
 
     static Properties prop = new Properties();
     private static InputStream configFile;

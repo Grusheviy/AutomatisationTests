@@ -13,14 +13,14 @@ import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class BerryFlavorAPITest extends AbstractTest {
+public class BerryFlavorAPITestBaseUrl extends AbstractTestBaseUrl {
 
     @Test
     void testGetBerryFlavorById() {
 
         BerryFlavor response = given()
                 .when()
-                .get(AbstractTest.getBaseUrl() + "berry-flavor/1")
+                .get(AbstractTestBaseUrl.getBaseUrl() + "berry-flavor/1")
                 .then()
                 .statusCode(200)
                 .extract()

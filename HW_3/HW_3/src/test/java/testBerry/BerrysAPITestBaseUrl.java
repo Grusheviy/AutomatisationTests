@@ -8,7 +8,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class BerrysAPITest extends AbstractTest {
+public class BerrysAPITestBaseUrl extends AbstractTestBaseUrl {
 
     /*
      * Тестирование API для получения информации о ягоде с ID 1.
@@ -26,7 +26,7 @@ public class BerrysAPITest extends AbstractTest {
         // Отправляем запрос к API для получения информации о ягоде с ID 1
         Berry response = given()
                 .when()
-                .get(AbstractTest.getBaseUrl() + "berry/1")
+                .get(AbstractTestBaseUrl.getBaseUrl() + "berry/1")
                 .then()
                 .statusCode(200)
                 .extract()

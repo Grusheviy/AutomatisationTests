@@ -1,23 +1,19 @@
 package testBerry;
 
 import berry.BerryFirmness;
-import berry.NamedAPIResource;
-import berry.Name;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class BerryFirmnessTest extends AbstractTest {
+public class BerryFirmnessTestBaseUrl extends AbstractTestBaseUrl {
 
     @Test
     void testGetBerryFirmnessById() {
         BerryFirmness response = given()
                 .when()
-                .get(AbstractTest.getBaseUrl() + "berry-firmness/1")
+                .get(AbstractTestBaseUrl.getBaseUrl() + "berry-firmness/1")
                 .then()
                 .statusCode(200)
                 .extract()
