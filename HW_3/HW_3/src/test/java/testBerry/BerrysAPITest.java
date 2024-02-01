@@ -1,3 +1,5 @@
+package testBerry;
+
 import berry.Berry;
 import berry.BerryFlavorMap;
 import org.junit.jupiter.api.Assertions;
@@ -6,7 +8,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class BerrysAPITest extends AbstractTest{
+public class BerrysAPITest extends AbstractTest {
 
     /*
      * Тестирование API для получения информации о ягоде с ID 1.
@@ -24,7 +26,7 @@ public class BerrysAPITest extends AbstractTest{
         // Отправляем запрос к API для получения информации о ягоде с ID 1
         Berry response = given()
                 .when()
-                .get(getBaseUrl() + "berry/1")
+                .get(AbstractTest.getBaseUrl() + "berry/1")
                 .then()
                 .statusCode(200)
                 .extract()
@@ -49,6 +51,10 @@ public class BerrysAPITest extends AbstractTest{
                 () -> assertEquals("spicy", flavorMap.getFlavor().getName()),
                 () -> assertEquals(10, flavorMap.getPotency()),
                 () -> assertEquals("cheri-berry", response.getItem().getName()),
-                () -> assertEquals("fire", response.getNaturalGiftType().getName()));
+                () -> assertEquals("fire", response.getNaturalGiftType().getName()),
+                () -> assertNotNull(response.getItem()),
+                () -> assertNotNull(response.getItem().getUrl()),
+                () -> assertEquals("https://pokeapi.co/api/v2/item/126/", response.getItem().getUrl())
+        );
     }
 }
