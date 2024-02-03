@@ -1,0 +1,18 @@
+{
+	"info": {
+		"_postman_id": "f78c7596-2392-4fdd-b36a-0cb67a3c84ff",
+		"name": "Forecast API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29791522"
+	},
+	"item": [
+		{
+			"name": "FiveDaysofDailyForecasts",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

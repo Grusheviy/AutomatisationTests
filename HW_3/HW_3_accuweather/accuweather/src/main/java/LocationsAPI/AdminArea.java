@@ -79,5 +79,6 @@ public class AdminArea {
     public void setCountryID(String countryID) {
         this.countryID = countryID;
     }
+
 }
 
