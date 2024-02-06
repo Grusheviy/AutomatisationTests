@@ -1,5 +1,6 @@
 package TestAddProduct;
 
+import org.example.home.CourierInfoEntity;
 import org.example.home.ProductsEntity;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -62,7 +63,7 @@ public class ProductTest extends AbstractTest{
         // given
         ProductsEntity entity = new ProductsEntity();
         entity.setMenuName("New Product");
-        entity.setPrice(String.valueOf(99.99f)); // Задаем значение как строку
+        entity.setPrice(String.valueOf(99.99f));
 
         // when
         Session session = getSession();
@@ -107,6 +108,21 @@ public class ProductTest extends AbstractTest{
     void addProduct_whenNotValid_shouldThrow() {
         // given
         ProductsEntity entity = new ProductsEntity();
+
+        // when
+        Session session = getSession();
+        session.beginTransaction();
+        session.persist(entity);
+
+        // then
+        Assertions.assertThrows(PersistenceException.class, () -> session.getTransaction().commit());
+    }
+
+    @Test
+    @Order(7)
+    void addCourierInfo_whenNotValid_shouldThrow() {
+        // given
+        CourierInfoEntity entity = new CourierInfoEntity();
 
         // when
         Session session = getSession();
