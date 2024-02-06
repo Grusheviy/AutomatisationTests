@@ -1,14 +1,12 @@
 package TestAddCourier;
 
 import org.example.home.CourierInfoEntity;
-import org.example.home.ProductsEntity;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import javax.persistence.PersistenceException;
 import java.sql.SQLException;
 import java.util.Optional;
 
@@ -144,5 +142,4 @@ public class CourierTest extends AbstractTest{
         // then
         Assertions.assertEquals(maxCourierIdBeforeDelete - 1, maxCourierIdBeforeDelete);
     }
-
 }
