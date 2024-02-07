@@ -16,6 +16,9 @@ import java.util.Optional;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class CustomerTest extends AbstractTest{
 
+    /**
+     * Тест проверяет, что количество записей в таблице customers соответствует ожидаемому.
+     */
     @Test
     @Order(1)
     void getCustomers_whenValid_shouldReturn() throws SQLException {
@@ -34,6 +37,9 @@ public class CustomerTest extends AbstractTest{
         Assertions.assertEquals(15, query.list().size());
     }
 
+    /**
+     * Параметризованный тест, который проверяет, что при запросе по имени возвращается корректная фамилия.
+     */
     @Order(2)
     @ParameterizedTest
     @CsvSource({"Penny, Smith", "Randy, Brown", "Oliver, Thompson"})
@@ -51,6 +57,11 @@ public class CustomerTest extends AbstractTest{
         Assertions.assertEquals(lastName, nameString);
     }
 
+    /**
+     * Тест проверяет корректность добавления записи в таблицу customers.
+     * Создается новая запись с уникальным customer_id.
+     * После выполнения проверяется, что добавление прошло успешно (вставлена одна строка).
+     */
     @Test
     @Order(3)
     void addCustomer_whenValid_shouldSave() {
@@ -78,6 +89,11 @@ public class CustomerTest extends AbstractTest{
         Assertions.assertEquals("100", creditEntity.getApartment());
     }
 
+    /**
+     * Тест проверяет корректность удаления записи из таблицы customers.
+     * Удаляется запись с указанным customer_id.
+     * После выполнения проверяется, что удаление прошло успешно (удалена одна строка).
+     */
     @Test
     @Order(4)
     void deleteCustomer_whenValid_shouldDelete() {
@@ -98,7 +114,10 @@ public class CustomerTest extends AbstractTest{
         Assertions.assertFalse(customersEntityAfterDelete.isPresent());
     }
 
-
+    /**
+     * Тест проверяет, что добавление записи с отсутствующими обязательными
+     * полями вызывает исключение PersistenceException.
+     */
     @Test
     @Order(5)
     void addCustomer_whenNotValid_shouldThrow() {
@@ -112,5 +131,4 @@ public class CustomerTest extends AbstractTest{
         Assertions.assertThrows(PersistenceException.class, () -> session.getTransaction().commit());
         ;
     }
-
 }

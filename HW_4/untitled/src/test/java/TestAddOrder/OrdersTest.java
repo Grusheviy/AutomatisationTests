@@ -11,6 +11,9 @@ import java.sql.SQLException;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class OrdersTest extends AbstractTest {
 
+    /**
+     * Тест проверяет, что количество записей в таблице orders соответствует ожидаемому.
+     */
     @Test
     @Order(1)
     void getOrders_whenValid_shouldReturn() throws SQLException {
@@ -26,6 +29,10 @@ public class OrdersTest extends AbstractTest {
         Assertions.assertEquals(15, countTableSize);
     }
 
+    /**
+     * Параметризованный тест, который проверяет, что при запросе по customer_id
+     * возвращается корректная запись из таблицы orders.
+     */
     @Order(2)
     @ParameterizedTest
     @CsvSource({"1", "2", "3"})
@@ -42,6 +49,9 @@ public class OrdersTest extends AbstractTest {
         Assertions.assertNotNull(ordersEntity);
     }
 
+    /**
+     * Тест проверяет, что количество записей в таблице orders за текущую дату соответствует ожидаемому.
+     */
     @Order(3)
     @Test
     void getOrdersByDate_whenValid_shouldReturn() throws SQLException {
@@ -57,6 +67,11 @@ public class OrdersTest extends AbstractTest {
         Assertions.assertEquals(15, countTableSize);
     }
 
+    /**
+     * Тест проверяет корректность добавления записи в таблицу orders.
+     * Создается новая запись с уникальным order_id, присвоенным максимальному order_id + 1.
+     * После выполнения проверяется, что добавление прошло успешно (вставлена одна строка).
+     */
     @Test
     @Order(4)
     void addOrder_whenValid_shouldSave() {

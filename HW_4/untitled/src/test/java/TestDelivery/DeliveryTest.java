@@ -15,6 +15,11 @@ import java.util.Optional;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class DeliveryTest extends AbstractTest {
 
+    /**
+     * Тест проверяет корректность добавления записи в таблицу delivery.
+     * Создается новая запись с уникальным delivery_id, присвоенным максимальному delivery_id + 1.
+     * После выполнения проверяется, что добавление прошло успешно (вставлена одна строка).
+     */
     @Test
     @Order(1)
     void addDelivery_whenValid_shouldSave() {
@@ -45,6 +50,9 @@ public class DeliveryTest extends AbstractTest {
         Assertions.assertEquals(1, rowsAffected);
     }
 
+    /**
+     * Тест проверяет, что количество записей в таблице delivery соответствует ожидаемому.
+     */
     @Test
     @Order(2)
     void getDeliveryById_whenExists_shouldReturnDelivery() {
@@ -60,7 +68,10 @@ public class DeliveryTest extends AbstractTest {
         Assertions.assertEquals(16, countTableSize);
     }
 
-
+    /**
+     * Параметризованный тест, который проверяет, что при запросе по delivery_id
+     * возвращается корректная запись из таблицы delivery.
+     */
     @ParameterizedTest
     @CsvSource({"1", "10", "16"})
     @Order(3)
@@ -78,6 +89,11 @@ public class DeliveryTest extends AbstractTest {
         Assertions.assertNotNull(deliveryEntity);
     }
 
+    /**
+     * Тест проверяет корректность удаления записи из таблицы delivery.
+     * Удаляется запись с указанным delivery_id.
+     * После выполнения проверяется, что удаление прошло успешно (удалена одна строка).
+     */
     @Test
     @Order(4)
     void deleteDelivery_whenValid_shouldDelete() {

@@ -12,6 +12,10 @@ import java.util.Optional;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class CourierTest extends AbstractTest{
+
+    /**
+     * Тест проверяет, что количество записей в таблице courier_info соответствует ожидаемому.
+     */
     @Test
     @Order(1)
     void getCourierInfo_whenValid_shouldReturn() throws SQLException{
@@ -27,6 +31,9 @@ public class CourierTest extends AbstractTest{
         Assertions.assertEquals(4, countTableSize);
     }
 
+    /**
+     * Тест проверяет, что при запросе по courier_id возвращается корректная запись.
+     */
     @Test
     @Order(2)
     void getCourierInfoById_whenValid_shouldReturn() throws SQLException {
@@ -42,6 +49,11 @@ public class CourierTest extends AbstractTest{
         Assertions.assertNotNull(courierInfoEntity);
     }
 
+    /**
+     * Параметризованный тест, который проверяет, что при запросе по
+     * courier_id, first_name и last_name
+     * возвращается корректная запись.
+     */
     @ParameterizedTest
     @CsvSource({
             "1, John, Rython",
@@ -71,6 +83,9 @@ public class CourierTest extends AbstractTest{
         Assertions.assertEquals(lastName, courierInfoEntity.getLastName());
     }
 
+    /**
+     * Тест проверяет корректность добавления новой записи в таблицу courier_info.
+     */
     @ParameterizedTest
     @CsvSource({
             "Chipi, Chipi, + 7 800 555 3535, foot",
@@ -103,30 +118,34 @@ public class CourierTest extends AbstractTest{
         Assertions.assertEquals(deliveryType, entity.getDeliveryType());
     }
 
+    /**
+     * Тест проверяет корректность удаления записи из таблицы courier_info.
+     */
     @Test
     @Order(5)
-    void deleteCourier_whenValid_shouldDelete() {
+    void deleteLastCourier_shouldDelete() {
         // given
-        final Query query = getSession()
-                .createSQLQuery("SELECT * FROM courier_info WHERE courier_id=5")
-                .addEntity(CourierInfoEntity.class);
-        Optional<CourierInfoEntity> courierInfoEntity = (Optional<CourierInfoEntity>) query.uniqueResultOptional();
-        Assumptions.assumeTrue(courierInfoEntity.isPresent());
-
-        // when
         Session session = getSession();
         session.beginTransaction();
-        session.delete(courierInfoEntity.get());
+
+        // Получаем текущий максимальный courier_id
+        int maxCourierIdBeforeDelete = (int) session.createSQLQuery("SELECT MAX(courier_id) FROM courier_info").uniqueResult();
+
+        // Создаем запрос на удаление курьера с максимальным courier_id
+        final Query deleteQuery = session.createSQLQuery("DELETE FROM courier_info WHERE courier_id = :maxCourierId")
+                .setParameter("maxCourierId", maxCourierIdBeforeDelete);
+
+        // when
+        int rowsAffected = deleteQuery.executeUpdate();
         session.getTransaction().commit();
 
         // then
-        final Query queryAfterDelete = getSession()
-                .createSQLQuery("SELECT * FROM courier_info WHERE courier_id=5")
-                .addEntity(CourierInfoEntity.class);
-        Optional<CourierInfoEntity> courierInfoEntityAfterDelete = (Optional<CourierInfoEntity>) queryAfterDelete.uniqueResultOptional();
-        Assertions.assertFalse(courierInfoEntityAfterDelete.isPresent());
+        Assertions.assertEquals(1, rowsAffected);
     }
 
+    /**
+     * Тест проверяет, что после удаления курьера, максимальный courier_id уменьшается на 1.
+     */
     @Test
     @Order(6)
     void verifyMaxCourierIdAfterDeletion() {
@@ -134,12 +153,20 @@ public class CourierTest extends AbstractTest{
         Session session = getSession();
         session.beginTransaction();
 
+        // Получаем текущий максимальный courier_id
         int maxCourierIdBeforeDelete = (int) session.createSQLQuery("SELECT MAX(courier_id) FROM courier_info").uniqueResult();
+
+        // Удаляем курьера с courier_id=5
+        final Query deleteQuery = session.createSQLQuery("DELETE FROM courier_info WHERE courier_id = 5");
+        deleteQuery.executeUpdate();
+
+        // Получаем новый максимальный courier_id после удаления
+        int maxCourierIdAfterDelete = (int) session.createSQLQuery("SELECT MAX(courier_id) FROM courier_info").uniqueResult();
 
         // when
         session.getTransaction().commit();
 
         // then
-        Assertions.assertEquals(maxCourierIdBeforeDelete - 1, maxCourierIdBeforeDelete);
+        Assertions.assertEquals(maxCourierIdBeforeDelete - 1, maxCourierIdAfterDelete);
     }
 }
