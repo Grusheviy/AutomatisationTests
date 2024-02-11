@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "bbd29b64-a59c-4111-8581-733be2e99be7",
+		"name": "Locations API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29791522"
+	},
+	"item": [
+		{
+			"name": "AdminAreaList",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "HBAoYTHBeloWennir9bjrNSNYgoGaCqz",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{AccuweatherBaseUrl}}/locations/v1/adminareas/10",
+					"host": [
+						"{{AccuweatherBaseUrl}}"
+					],
+					"path": [
+						"locations",
+						"v1",
+						"adminareas",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CountryList",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Статус ответа должен быть 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Ответ должен быть массивом\", function () {\r",
+							"    pm.expect(pm.response.json()).to.be.an('array');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Каждый элемент массива должен содержать обязательные поля\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    jsonData.forEach(function (item) {\r",
+							"        pm.expect(item).to.have.property('ID');\r",
+							"        pm.expect(item).to.have.property('LocalizedName');\r",
+							"        pm.expect(item).to.have.property('EnglishName');\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Проверка значений параметров в первом элементе массива\", function () {\r",
+							"    var firstItem = pm.response.json()[0];\r",
+							"\r",
+							"    pm.expect(firstItem.ID).to.equal(\"AF\");\r",
+							"    pm.expect(firstItem.LocalizedName).to.equal(\"Afghanistan\");\r",
+							"    pm.expect(firstItem.EnglishName).to.equal(\"Afghanistan\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AccuweatherBaseUrl}}/locations/v1/countries/ASI?apikey=m0j3C6Javtr3cmCnWp3s2ABsxniXA28s",
+					"host": [
+						"{{AccuweatherBaseUrl}}"
+					],
+					"path": [
+						"locations",
+						"v1",
+						"countries",
+						"ASI"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "m0j3C6Javtr3cmCnWp3s2ABsxniXA28s"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegionList",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

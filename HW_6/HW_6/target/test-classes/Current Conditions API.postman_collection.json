@@ -1,0 +1,35 @@
+{
+	"info": {
+		"_postman_id": "7362d35d-2936-45b2-9486-3abc2cd1340b",
+		"name": "Current Conditions API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29791522"
+	},
+	"item": [
+		{
+			"name": "CurrentConditions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AccuweatherBaseUrl}}/currentconditions/v1/50?apikey=hToCF7Oq420Ga14UJUDuPHWdH2VtSPC0",
+					"host": [
+						"{{AccuweatherBaseUrl}}"
+					],
+					"path": [
+						"currentconditions",
+						"v1",
+						"50"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "hToCF7Oq420Ga14UJUDuPHWdH2VtSPC0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

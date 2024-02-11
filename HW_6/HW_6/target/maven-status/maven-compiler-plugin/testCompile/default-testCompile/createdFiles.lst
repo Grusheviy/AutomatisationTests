@@ -1,0 +1,7 @@
+LocationsAPI\testRegionList.class
+LocationsAPI\testAdminAreaList.class
+LocationsAPI\testCountryList.class
+testCurrentConditionAPI\testCurrentCondition.class
+LocationsAPI\testTopCities.class
+AccuweatherAbstractTest\AccuweatherAbstractTest.class
+FiveDaysWeatherForecast\testFiveDaysWeatherForecastRequiredFields.class
