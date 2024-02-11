@@ -18,3 +18,20 @@ jobs:
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package
       - run: echo "🍏 This job's status is ${{ job.status }}."
+               - name: Run tests and generate Allure report
+               run: mvn allure:report
+
+      - name: Run tests and generate Allure report
+        run: mvn allure:report
+
+      - name: Upload Allure report
+        uses: actions/upload-artifact@v2
+        with:
+          name: allure-results
+          path: target/allure-results
+
+      - name: Set up Allure
+        uses: dawidd6/action-allure@v2
+
+      - name: Serve Allure report
+        run: allure serve target/allure-results
