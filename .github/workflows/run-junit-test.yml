@@ -21,8 +21,8 @@ jobs:
 
       - name: Run tests and generate Allure report
         run: |
-          mvn allure:clean
-          mvn allure:report
+            mvn allure:clean
+            mvn allure:report
 
       - name: Upload Allure report artifacts
         uses: actions/upload-artifact@v2
@@ -33,11 +33,25 @@ jobs:
       - name: Set job status
         run: echo "🍏 This job's status is ${{ job.status }}."
 
-      - name: Install Allure command-line tool
-        run: |
+        serve-report:
+          needs: run-tests
+          runs-on: ubuntu-latest
+
+          steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Download Allure report artifacts
+              uses: actions/download-artifact@v2
+              with:
+                name: allure-report
+                path: allure-report
+
+            - name: Install Allure command-line tool
+              run: |
                 sudo apt-add-repository -y ppa:qameta/allure
                 sudo apt-get update
                 sudo apt-get install allure
 
-      - name: Serve Allure report
-        run: allure serve target/site/allure-maven-plugin
+            - name: Serve Allure report
+              run: allure serve allure-report
