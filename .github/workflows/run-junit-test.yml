@@ -18,40 +18,36 @@ jobs:
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Generate Allure Report
+        run: mvn allure:report
 
-      - name: Run tests and generate Allure report
-        run: |
-            mvn allure:clean
-            mvn allure:report
-
-      - name: Upload Allure report artifacts
-        uses: actions/upload-artifact@v2
+      - name: Archive Allure Report
+        uses: actions/upload-artifact@v4
         with:
           name: allure-report
           path: target/site/allure-maven-plugin
 
-      - name: Set job status
-        run: echo "🍏 This job's status is ${{ job.status }}."
+  serve-allure-report:
+    needs: run-tests
+    runs-on: ubuntu-latest
 
-        serve-report:
-          needs: run-tests
-          runs-on: ubuntu-latest
+    steps:
+      - name: Download Allure Report
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report
 
-          steps:
-            - name: Checkout code
-              uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-            - name: Download Allure report artifacts
-              uses: actions/download-artifact@v2
-              with:
-                name: allure-report
-                path: allure-report
+      - name: Install Allure Command Line
+        run: |
+          sudo apt-add-repository -y ppa:qameta/allure
+          sudo apt-get update
+          sudo apt-get install -y allure
 
-            - name: Install Allure command-line tool
-              run: |
-                sudo apt-add-repository -y ppa:qameta/allure
-                sudo apt-get update
-                sudo apt-get install allure
-
-            - name: Serve Allure report
-              run: allure serve allure-report
+      - name: Serve Allure Report Locally
+        run: allure serve allure-report
