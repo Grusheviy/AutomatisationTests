@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89949a7b-8a49-4e64-abc4-36a737343841" name="Changes" comment="pom">
+    <list default="true" id="89949a7b-8a49-4e64-abc4-36a737343841" name="Changes" comment="github actions added run allure report">
       <change beforePath="$PROJECT_DIR$/.github/workflows/run-junit-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/run-junit-test.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,13 +105,22 @@
       <option name="project" value="LOCAL" />
       <updated>1707677653116</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="github actions added run allure report">
+      <option name="closed" value="true" />
+      <created>1707678033506</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1707678033506</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="github action" />
     <MESSAGE value="github action v4 checkout@v4 and setup-java@v4" />
     <MESSAGE value="pom" />
-    <option name="LAST_COMMIT_MESSAGE" value="pom" />
+    <MESSAGE value="github actions added run allure report" />
+    <option name="LAST_COMMIT_MESSAGE" value="github actions added run allure report" />
   </component>
 </project>
