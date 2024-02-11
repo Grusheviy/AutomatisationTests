@@ -20,6 +20,34 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Generate Allure Report
         run: mvn allure:report
-      - name: Serve Allure Report
-        run: mvn allure:serve
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+
+      - name: Archive Allure Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: allure-report
+          path: target/site/allure-maven-plugin
+
+  serve-allure-report:
+    needs: run-tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Allure Report
+        uses: actions/download-artifact@v2
+        with:
+          name: allure-report
+          path: allure-report
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install Allure Command Line
+        run: |
+          sudo apt-add-repository -y ppa:qameta/allure
+          sudo apt-get update
+          sudo apt-get install -y allure
+
+      - name: Serve Allure Report Locally
+        run: allure serve allure-report
