@@ -30,27 +30,14 @@ jobs:
           name: allure-report
           path: target/site/allure-maven-plugin
 
-      - name: Generate allure report
+      - name: Set job status
         run: echo "🍏 This job's status is ${{ job.status }}."
 
-    generate-report:
-      needs: run-tests
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout code
-          uses: actions/checkout@v4
+      - name: Install Allure command-line tool
+        run: |
+                sudo apt-add-repository -y ppa:qameta/allure
+                sudo apt-get update
+                sudo apt-get install allure
 
-        - name: Download Allure report artifacts
-          uses: actions/download-artifact@v2
-          with:
-            name: allure-report
-            path: allure-report
-
-        - name: Install Allure command-line tool
-          run: |
-            sudo apt-add-repository -y ppa:qameta/allure
-            sudo apt-get update
-            sudo apt-get install allure
-
-        - name: Serve Allure report
-          run: allure serve allure-report
+      - name: Serve Allure report
+        run: allure serve target/site/allure-maven-plugin
