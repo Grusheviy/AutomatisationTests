@@ -15,26 +15,6 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Install Allure CLI
-        run: |
-            sudo apt-add-repository -y ppa:qameta/allure
-            sudo apt-get update
-            sudo apt-get install allure
-
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package
       - run: echo "🍏 This job's status is ${{ job.status }}."
-
-      - name: Run tests and generate Allure report
-        run: |
-            mvn allure:report
-            allure generate --clean
-
-      - name: Upload Allure report
-        uses: actions/upload-artifact@v2
-        with:
-          name: allure-results
-          path: allure-report
-
-      - name: Serve Allure report
-        run: allure open allure-report
