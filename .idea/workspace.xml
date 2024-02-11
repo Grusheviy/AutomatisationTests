@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="89949a7b-8a49-4e64-abc4-36a737343841" name="Changes" comment="github action v4 checkout@v4 and setup-java@v4">
       <change beforePath="$PROJECT_DIR$/HW_6/HW_6/allure-results/allure.properties" beforeDir="false" afterPath="$PROJECT_DIR$/HW_6/HW_6/allure-results/allure.properties" afterDir="false" />
