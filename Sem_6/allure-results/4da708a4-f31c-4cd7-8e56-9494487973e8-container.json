@@ -1,0 +1,1 @@
+{"uuid":"4da708a4-f31c-4cd7-8e56-9494487973e8","name":"checkGamerWin21()","children":["bad3aed1-28e0-4909-b362-07f8626f9107"],"befores":[],"afters":[{"name":"newGame","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1707658606872,"stop":1707658606872}],"start":1707658606868,"stop":1707658606874}

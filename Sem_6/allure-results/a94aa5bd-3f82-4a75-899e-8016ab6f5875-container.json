@@ -1,0 +1,1 @@
+{"uuid":"a94aa5bd-3f82-4a75-899e-8016ab6f5875","name":"checkRiskWin()","children":["eb892d01-cf01-4fd6-8092-543d24323bd4"],"befores":[{"name":"initDoors","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1707658606712,"stop":1707658606713}],"afters":[],"start":1707658606711,"stop":1707658606716}
