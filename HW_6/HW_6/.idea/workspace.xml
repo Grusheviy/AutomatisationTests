@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="353243f9-8e48-4982-b053-c50640517ea0" name="Changes" comment="Added HW_3 project to HW_6 and added allure">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/github-actions-demo.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/run-junit-test.yml" afterDir="false" />
-    </list>
+    <list default="true" id="353243f9-8e48-4982-b053-c50640517ea0" name="Changes" comment="Added Github Action" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +28,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Study/AutomatizationTesting/HomeWorks/HW_6/HW_6",
+    "last_opened_file_path": "D:/Study/AutomatizationTesting/HomeWorks/HW_6",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -39,6 +36,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Study\AutomatizationTesting\HomeWorks\HW_6\HW_6" />
       <recent name="D:\Study\AutomatizationTesting\HomeWorks\HW_6\HW_6\src\test" />
       <recent name="D:\Study\AutomatizationTesting\HomeWorks\HW_6\HW_6\src\main\java" />
     </key>
@@ -117,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707675334222</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added Github Action">
+      <option name="closed" value="true" />
+      <created>1707675637975</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707675637975</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,7 +139,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added HW_3 project to HW_6 and added allure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added HW_3 project to HW_6 and added allure" />
+    <MESSAGE value="Added Github Action" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Github Action" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HW_6$All_in_HW_6.ic" NAME="All in HW_6 Coverage Results" MODIFIED="1707673953141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
