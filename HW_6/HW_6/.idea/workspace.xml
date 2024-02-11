@@ -5,41 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="353243f9-8e48-4982-b053-c50640517ea0" name="Changes" comment="Added HW_3 project to HW_6 and added allure">
-      <change afterPath="$PROJECT_DIR$/../../HW_3/HW_3_accuweather/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../HW_3/HW_3_accuweather/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../HW_3/HW_3_accuweather/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../HW_3/HW_3_accuweather/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CurrentConditionsAPI/CurrentCondition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CurrentConditionsAPI/Temperature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CurrentConditionsAPI/TemperatureDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FiveDaysWeatherForecast/DailyForecast.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FiveDaysWeatherForecast/DayNightInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FiveDaysWeatherForecast/Headline.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FiveDaysWeatherForecast/Source.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FiveDaysWeatherForecast/Temperature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FiveDaysWeatherForecast/TemperatureInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FiveDaysWeatherForecast/WeatherForecastResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LocationsAPI/AdminArea.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LocationsAPI/Country.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LocationsAPI/Elevation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LocationsAPI/GeoPosition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LocationsAPI/Imperial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LocationsAPI/Metric.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LocationsAPI/Region.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LocationsAPI/TimeZone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LocationsAPI/TopCities.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/AccuweatherAbstractTest/AccuweatherAbstractTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/FiveDaysWeatherForecast/testFiveDaysWeatherForecastRequiredFields.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/LocationsAPI/testAdminAreaList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/LocationsAPI/testCountryList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/LocationsAPI/testRegionList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/LocationsAPI/testTopCities.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/testCurrentConditionAPI/testCurrentCondition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/Current Conditions API.postman_collection.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/Forecast API.postman_collection.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/Locations API.postman_collection.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/accuweather.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../HW_3/HW_3_accuweather/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../HW_3/HW_3_accuweather/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/github-actions-demo.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/run-junit-test.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +15,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -62,15 +28,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Study/AutomatizationTesting/HomeWorks/HW_6/HW_6/src/test&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/Study/AutomatizationTesting/HomeWorks/HW_6/HW_6",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Study\AutomatizationTesting\HomeWorks\HW_6\HW_6\src\test" />
@@ -135,7 +101,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707674443991</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added HW_3 project to HW_6 and added allure">
+      <option name="closed" value="true" />
+      <created>1707675224348</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707675224348</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added HW_3 project to HW_6 and added allure">
+      <option name="closed" value="true" />
+      <created>1707675334222</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707675334222</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
