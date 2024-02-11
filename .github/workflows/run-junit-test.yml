@@ -38,6 +38,11 @@ jobs:
           name: allure-report
           path: allure-report
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
