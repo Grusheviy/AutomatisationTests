@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89949a7b-8a49-4e64-abc4-36a737343841" name="Changes" comment="github actions added run allure report v3">
+    <list default="true" id="89949a7b-8a49-4e64-abc4-36a737343841" name="Changes" comment="github actions added Set up Node.js">
       <change beforePath="$PROJECT_DIR$/.github/workflows/run-junit-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/run-junit-test.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +137,31 @@
       <option name="project" value="LOCAL" />
       <updated>1707678816894</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="github actions added run allure report v4">
+      <option name="closed" value="true" />
+      <created>1707678932790</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1707678932790</updated>
+    </task>
+    <task id="LOCAL-00013" summary="github actions added run allure report v4">
+      <option name="closed" value="true" />
+      <created>1707678937203</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1707678937203</updated>
+    </task>
+    <task id="LOCAL-00014" summary="github actions added Set up Node.js">
+      <option name="closed" value="true" />
+      <created>1707679199002</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1707679199002</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -146,6 +170,8 @@
     <MESSAGE value="pom" />
     <MESSAGE value="github actions added run allure report" />
     <MESSAGE value="github actions added run allure report v3" />
-    <option name="LAST_COMMIT_MESSAGE" value="github actions added run allure report v3" />
+    <MESSAGE value="github actions added run allure report v4" />
+    <MESSAGE value="github actions added Set up Node.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="github actions added Set up Node.js" />
   </component>
 </project>
