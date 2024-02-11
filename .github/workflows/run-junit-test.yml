@@ -22,9 +22,6 @@ jobs:
       - name: Run tests and generate Allure report
         run: mvn allure:report
 
-      - name: Run tests and generate Allure report
-        run: mvn allure:report
-
       - name: Upload Allure report
         uses: actions/upload-artifact@v2
         with:
@@ -32,7 +29,9 @@ jobs:
           path: target/allure-results
 
       - name: Set up Allure
-        uses: dawidd6/action-allure@v2
+        uses: qameta/allure-github-action@v2
+        with:
+          version: 2
 
       - name: Serve Allure report
-        run: allure serve target/allure-results
+        run: allure generate --clean && allure open
